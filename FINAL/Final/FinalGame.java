@@ -166,20 +166,23 @@ public class FinalGame extends JFrame {
 			dao_i = new DAOClass();
 			proArray=dao_i.getAllInfo();
 			} catch (ClassNotFoundException e2) {
-					// TODO Auto-generated catch block
 					e2.printStackTrace();
 			} catch (SQLException e2) {
-					// TODO Auto-generated catch block
 					e2.printStackTrace();
 			}
+
+		if (proArray == null) {
+			JOptionPane.showMessageDialog(null, "Failed to load game data from database. Please check your database connection.");
+			return;
+		}
 		
 		try {
-			pixelMplus=Font.createFont(Font.TRUETYPE_FONT, new File("DUNGGEUNMO.TTF")).deriveFont(40f);
+			pixelMplus=Font.createFont(Font.TRUETYPE_FONT, new File("DungGeunMo.ttf")).deriveFont(40f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("DUNGGEUNMO.TTF")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("DungGeunMo.ttf")));
 		}
 		catch(IOException | FontFormatException e) {
-			
+			System.err.println("Failed to load font DungGeunMo.ttf: " + e.getMessage());
 		}
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -243,11 +246,6 @@ public class FinalGame extends JFrame {
 				if (answer.equals(proArray.get(0).getWord())) {
 					textField.setForeground(Color.GREEN);
 					textField.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
-				} else if (answer.equals(proArray.get(0).getWord()) && (textField.getForeground().equals(Color.RED))) {
-					textField.setForeground(Color.GREEN);
-					textField.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));	
 					JOptionPane.showMessageDialog(null, "Great Job!!");
 					sum=sum+1;
 				} else if (!answer.equals(proArray.get(0).getWord()) && (textField.getForeground().equals(Color.RED))){
@@ -379,11 +377,6 @@ public class FinalGame extends JFrame {
 					textField_1.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
 					sum=sum+1;
-				} else if (answer.equals(proArray.get(1).getWord()) && (textField_1.getForeground().equals(Color.RED))) {
-					textField_1.setForeground(Color.GREEN);
-					textField_1.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
 				} else if (!answer.equals(proArray.get(1).getWord()) && (textField_1.getForeground().equals(Color.RED))){
 					try {
 						Thread.sleep(500);
@@ -507,11 +500,6 @@ public class FinalGame extends JFrame {
 				if (btnNewButton_2_1.isEnabled()) {
 				String answer=textField_2.getText();
 				if (answer.equals(proArray.get(2).getWord())) {
-					textField_2.setForeground(Color.GREEN);
-					textField_2.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
-				} else if (answer.equals(proArray.get(2).getWord()) && (textField_2.getForeground().equals(Color.RED))) {
 					textField_2.setForeground(Color.GREEN);
 					textField_2.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
@@ -643,11 +631,6 @@ public class FinalGame extends JFrame {
 					textField_3.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
 					sum=sum+1;
-				} else if (answer.equals(proArray.get(3).getWord()) && (textField_3.getForeground().equals(Color.RED))) {
-					textField_3.setForeground(Color.GREEN);
-					textField_3.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
 				} else if (!answer.equals(proArray.get(3).getWord()) && (textField_3.getForeground().equals(Color.RED))){
 					try {
 						Thread.sleep(500);
@@ -771,11 +754,6 @@ public class FinalGame extends JFrame {
 				if (btnNewButton_2_1_1_1.isEnabled()) {
 				String answer=textField_4.getText();
 				if (answer.equals(proArray.get(4).getWord())) {
-					textField_4.setForeground(Color.GREEN);
-					textField_4.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
-				} else if (answer.equals(proArray.get(4).getWord()) && (textField_4.getForeground().equals(Color.RED))) {
 					textField_4.setForeground(Color.GREEN);
 					textField_4.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
@@ -907,11 +885,6 @@ public class FinalGame extends JFrame {
 					textField_5.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
 					sum=sum+1;
-				} else if (answer.equals(proArray.get(5).getWord()) && (textField_5.getForeground().equals(Color.RED))) {
-					textField_5.setForeground(Color.GREEN);
-					textField_5.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
 				} else if (!answer.equals(proArray.get(5).getWord()) && (textField_5.getForeground().equals(Color.RED))){
 					try {
 						Thread.sleep(500);
@@ -1035,11 +1008,6 @@ public class FinalGame extends JFrame {
 				if (btnNewButton_2_1_1_1_1_1.isEnabled()) {
 				String answer=textField_6.getText();
 				if (answer.equals(proArray.get(6).getWord())) {
-					textField_6.setForeground(Color.GREEN);
-					textField_6.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
-				} else if (answer.equals(proArray.get(6).getWord()) && (textField_6.getForeground().equals(Color.RED))) {
 					textField_6.setForeground(Color.GREEN);
 					textField_6.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
@@ -1171,11 +1139,6 @@ public class FinalGame extends JFrame {
 					textField_7.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
 					sum=sum+1;
-				} else if (answer.equals(proArray.get(7).getWord()) && (textField_7.getForeground().equals(Color.RED))) {
-					textField_7.setForeground(Color.GREEN);
-					textField_7.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
 				} else if (!answer.equals(proArray.get(7).getWord()) && (textField_7.getForeground().equals(Color.RED))){
 					try {
 						Thread.sleep(500);
@@ -1299,11 +1262,6 @@ public class FinalGame extends JFrame {
 				if (btnNewButton_2_1_1_1_1_1_1_1.isEnabled()) {
 				String answer=textField_8.getText();
 				if (answer.equals(proArray.get(8).getWord())) {
-					textField_8.setForeground(Color.GREEN);
-					textField_8.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
-				} else if (answer.equals(proArray.get(8).getWord()) && (textField_8.getForeground().equals(Color.RED))) {
 					textField_8.setForeground(Color.GREEN);
 					textField_8.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");
@@ -1434,11 +1392,6 @@ public class FinalGame extends JFrame {
 				if (btnNewButton_2_1_1_1_1_1_1_1_1.isEnabled()) {
 				String answer=textField_9.getText();
 				if (answer.equals(proArray.get(9).getWord())) {
-					textField_9.setForeground(Color.GREEN);
-					textField_9.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
-					JOptionPane.showMessageDialog(null, "Great Job!!");
-					sum=sum+1;
-				} else if (answer.equals(proArray.get(9).getWord()) && (textField_9.getForeground().equals(Color.RED))) {
 					textField_9.setForeground(Color.GREEN);
 					textField_9.setBorder(BorderFactory.createLineBorder(Color.GREEN,3,true));
 					JOptionPane.showMessageDialog(null, "Great Job!!");

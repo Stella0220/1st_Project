@@ -4,12 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
-import Final.DBConnClass;
-import Final.VOClass_image;
-import Final.VOClass_name;
-
 public class ERDClass_dr1 {
 	private Connection con;
 	PreparedStatement pstmt=null;

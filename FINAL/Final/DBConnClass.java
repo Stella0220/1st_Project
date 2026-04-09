@@ -19,9 +19,4 @@ private Connection con;
 		System.out.println("접속완료");
 	}
 
-	public PreparedStatement prepareStatement(String sql2) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
